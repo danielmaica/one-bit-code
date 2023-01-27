@@ -35,6 +35,44 @@ a:hover {
 }
 .main-content {
   flex: 1 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "modalities modalities modalities extras";
+}
+.modalities {
+  grid-area: modalities;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "description description description"
+    "boxe crossfit swimming"
+    "clothes basketball running"
+    "surf trail tennis";
+}
+.modality {
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 300px;
+}
+.modalities .modality img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+}
+.description {
+  grid-area: description;
+  text-align: center;
+  padding: 20px;
+}
+.boxe {
+  grid-area: boxe;
+}
+.crosffit {
+  grid-area: crossfit;
+}
+.categorias-extras {
+  grid-area: extras;
+  display: grid;
 }
 .footer {
   background-color: #000000de;
