@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baralho de Cartas</title>
+  </head>
+  <body>
+    <h1>Baralho de Cartas</h1>
+    <script>
+      let cards = [];
+      let menu;
+
+      do {
+        menu = prompt(
+          `Cartas do Baralho: ${cards.length}\n\n[+] ADICIONAR CARTA  [x] PUXAR CARTA  [s] SAIR`
+        ).toLowerCase();
+
+        switch (menu) {
+          case '+':
+            const newCard = prompt(
+              'Digite a carta que deseja adicionar:'
+            ).toUpperCase();
+            alert(`Carta ${newCard} adicionada ao baralho.`);
+            cards.unshift(newCard);
+            break;
+          case 'x':
+            if (cards.length > 0) {
+              const lastCard = cards.shift();
+              alert(`Carta ${lastCard} sacada do baralho.`);
+            } else {
+              alert('O baralho está vazio.');
+            }
+            break;
+          case 's':
+            alert('Saindo...');
+            break;
+          default:
+            alert('Opção inválida, tente novamente!');
+            break;
+        }
+      } while (menu !== 's');
+    </script>
+  </body>
+</html>
