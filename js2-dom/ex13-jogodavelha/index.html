@@ -9,26 +9,29 @@
   <script src="index.js" defer></script>
 </head>
 <body>
-  <h1>Jogo da Velha</h1>
-  <hr>
-
-  <label for="player1">X</label>
-  <input type="text" id="player1" placeholder="Nome do Jogador 1">
-  <label for="player2">O</label>
-  <input type="text" id="player2" placeholder="Nome do Jogador 2">
-  <button id="start">Começar!</button>
-  <h2>Vez de: <span id="turnPlayer"></span></h2>
-
-  <section id="gameBoard">
-    <span data-region="0.0" class="cursor-pointer"></span>
-    <span data-region="0.1" class="cursor-pointer"></span>
-    <span data-region="0.2" class="cursor-pointer"></span>
-    <span data-region="1.0" class="cursor-pointer"></span>
-    <span data-region="1.1" class="cursor-pointer"></span>
-    <span data-region="1.2" class="cursor-pointer"></span>
-    <span data-region="2.0" class="cursor-pointer"></span>
-    <span data-region="2.1" class="cursor-pointer"></span>
-    <span data-region="2.2" class="cursor-pointer"></span>
-  </section>
+  <div class="container">
+    <h1>Jogo da Velha</h1>
+  
+    <div class="players">
+      <label for="player1">X</label>
+      <input type="text" id="player1" placeholder="Nome do Jogador 1">
+      <label for="player2">O</label>
+      <input type="text" id="player2" placeholder="Nome do Jogador 2">
+      <button id="start">Começar!</button>
+    </div>
+    <h2>Vez de: <span id="turnPlayer"></span></h2>
+  
+    <section id="gameBoard">
+      <span data-region="0.0" class="cursor-pointer"></span>
+      <span data-region="0.1" class="cursor-pointer"></span>
+      <span data-region="0.2" class="cursor-pointer"></span>
+      <span data-region="1.0" class="cursor-pointer"></span>
+      <span data-region="1.1" class="cursor-pointer"></span>
+      <span data-region="1.2" class="cursor-pointer"></span>
+      <span data-region="2.0" class="cursor-pointer"></span>
+      <span data-region="2.1" class="cursor-pointer"></span>
+      <span data-region="2.2" class="cursor-pointer"></span>
+    </section>
+  </div>
 </body>
 </html>
