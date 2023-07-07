@@ -6,6 +6,42 @@
     <title>Pilha de cartas</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Pilha de cartas</h1>
+    <script>
+      let baralho = [];
+      let opcao;
+
+      do {
+        let cartas = '';
+        for (let i = 0; i < baralho.length; i++) {
+          cartas += `- ${baralho[i]}\n`;
+        }
+
+        opcao = prompt(
+          `Baralho:\n${cartas}
+          \n[+] Adicionar Carta | [x] Puxar uma carta | [s] Sair`
+        );
+
+        switch (opcao) {
+          case '+':
+            let novaCarta = prompt(
+              'Digite o nome da carta que deseja adicionar:'
+            );
+            baralho.push(novaCarta);
+            alert(`Adicionando ${novaCarta} ao baralho.`);
+            break;
+          case 'x':
+            let cartaAcima = baralho.shift();
+            alert(`${cartaAcima} puxada do baralho.`);
+            break;
+          case 's':
+            alert('Saindo...');
+            break;
+          default:
+            alert('Opção inválida.');
+            break;
+        }
+      } while (opcao !== 's');
+    </script>
   </body>
 </html>
