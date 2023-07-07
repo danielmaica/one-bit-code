@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fila de Espera</title>
+  </head>
+  <body>
+    <h1>Fila de Espera</h1>
+    <script>
+      let fila = [];
+      let opcao;
+
+      do {
+        let pacientes = '';
+        for (let i = 0; i < fila.length; i++) {
+          pacientes += `${i + 1}º ${fila[i]}\n`;
+        }
+
+        opcao = prompt(
+          `Fila de Espera:\n${pacientes}
+          \n[+] Novo Paciente | [x] Consultar Paciente | [s] Sair`
+        );
+
+        switch (opcao) {
+          case '+':
+            let novoPaciente = prompt('Digite o nome do paciente:');
+            fila.push(novoPaciente);
+            alert(`Paciente ${novoPaciente} na fila.`);
+            break;
+          case 'x':
+            let consulta = prompt('Digite o nome do paciente:');
+            if (fila.includes(consulta)) {
+              let pacientePosicao = fila.indexOf(consulta);
+              alert(
+                `Paciente ${consulta} está em ${
+                  pacientePosicao + 1
+                }º lugar na fila.`
+              );
+            } else {
+              alert(`Este(a) paciente não está na lista.`);
+            }
+            break;
+          case 's':
+            alert('Saindo...');
+            break;
+          default:
+            alert('Opção inválida.');
+            break;
+        }
+      } while (opcao !== 's');
+    </script>
+  </body>
+</html>
