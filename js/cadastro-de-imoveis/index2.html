@@ -22,16 +22,17 @@
 
         switch (opcao) {
           case '+':
-            let proprietario = prompt(`Informe o nome do proprietário: `);
-            let quartos = prompt(`Informe a quantidade de quartos: `);
-            let banheiros = prompt(`Informe a quantidade de banheiros: `);
-            let garagem = prompt(`Possui garagem: [S/N]`).toLowerCase();
-            let novoImovel = {
-              proprietario: proprietario,
-              quartos: quartos,
-              banheiros: banheiros,
-              garagem: garagem,
-            };
+            let novoImovel = {};
+            novoImovel.proprietario = prompt(
+              `Informe o nome do proprietário: `
+            );
+            novoImovel.quartos = prompt(`Informe a quantidade de quartos: `);
+            novoImovel.banheiros = prompt(
+              `Informe a quantidade de banheiros: `
+            );
+            novoImovel.garagem = prompt(
+              `Possui garagem: [Sim/Não]`
+            ).toLowerCase();
             let salvar = imoveis.push(novoImovel);
             alert(`${salvar}ª propriedade salva.`);
             break;
