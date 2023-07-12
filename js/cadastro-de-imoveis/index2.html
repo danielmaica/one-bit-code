@@ -33,11 +33,28 @@
             novoImovel.garagem = prompt(
               `Possui garagem: [Sim/Não]`
             ).toLowerCase();
-            let salvar = imoveis.push(novoImovel);
-            alert(`${salvar}ª propriedade salva.`);
+            const confirmacao = confirm(
+              `Deseja salvar este imóvel?
+              - Proprietário: ${novoImovel.proprietario}
+              - Quartos: ${novoImovel.quartos}
+              - Banheiros: ${novoImovel.banheiros}
+              - Possui garagem? ${novoImovel.garagem}`
+            );
+            if (confirmacao) {
+              let salvar = imoveis.push(novoImovel);
+              alert(`${salvar}ª propriedade salva.`);
+            } else {
+              alert(`Novo imóvel cancelado.`);
+            }
             break;
           case 'e':
-            alert(`${imoveisSalvos}`);
+            imoveis.forEach((i) => {
+              alert(`Imóvel:
+              - Proprietário: ${i.proprietario}
+              - Quartos: ${i.quartos}
+              - Banheiros: ${i.banheiros}
+              - Possui garagem? ${i.garagem}`);
+            });
             break;
           case 's':
             alert('Saindo...');
