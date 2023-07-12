@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Imóveis</title>
+  </head>
+  <body>
+    <h1>Cadastro de Imóveis</h1>
+    <script>
+      let imoveis = [];
+      let opcao = '';
+
+      do {
+        let imoveisSalvos = '';
+        imoveis.forEach((imovel) => {
+          imoveisSalvos += `${imovel.proprietario}'s House;\n`;
+        });
+
+        opcao = prompt(`Cadastro de Imóveis:\n${imoveis.length} cadastrados.
+        \n[+] Salvar Imóvel  [E] Exibir Todos  [S] Sair`).toLowerCase();
+
+        switch (opcao) {
+          case '+':
+            let proprietario = prompt(`Informe o nome do proprietário: `);
+            let quartos = prompt(`Informe a quantidade de quartos: `);
+            let banheiros = prompt(`Informe a quantidade de banheiros: `);
+            let garagem = prompt(`Possui garagem: [S/N]`).toLowerCase();
+            let novoImovel = {
+              proprietario: proprietario,
+              quartos: quartos,
+              banheiros: banheiros,
+              garagem: garagem,
+            };
+            let salvar = imoveis.push(novoImovel);
+            alert(`${salvar}ª propriedade salva.`);
+            break;
+          case 'e':
+            alert(`${imoveisSalvos}`);
+            break;
+          case 's':
+            alert('Saindo...');
+            break;
+          default:
+            alert('Opção inválida.');
+            break;
+        }
+      } while (opcao != 's');
+    </script>
+  </body>
+</html>
